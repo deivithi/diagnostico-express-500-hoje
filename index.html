@@ -1,64 +1,129 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Diagnóstico Express IA — Vagas de Hoje</title>
-  <meta name="description" content="Diagnóstico Express de IA + Operação Comercial. Entrega em 24h. Vagas de hoje." />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Diagnóstico Express IA | Sprint de Performance Comercial</title>
+  <meta name="description" content="Diagnóstico Express IA com blueprint de 7 dias para reduzir retrabalho e aumentar conversão. Oferta limitada para hoje."/>
+  <meta property="og:title" content="Diagnóstico Express IA | Sprint de Performance Comercial"/>
+  <meta property="og:description" content="Entrega em 24h: raio-x operacional + plano de 7 dias com priorização por ROI."/>
+  <meta property="og:type" content="website"/>
   <style>
-    :root{--bg:#070b16;--card:#111936;--line:#2b3d7a;--txt:#eef3ff;--sub:#a9b7df;--ok:#5dff9a;--cta:#2f6bff}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial;background:radial-gradient(circle at top,#0e1630 0,#070b16 60%);color:var(--txt)}
-    .wrap{max-width:980px;margin:0 auto;padding:28px}
-    .hero,.card{background:rgba(17,25,54,.92);border:1px solid var(--line);border-radius:18px;padding:22px;margin:14px 0;backdrop-filter: blur(4px)}
-    h1{font-size:34px;line-height:1.1;margin:0 0 12px} h2{margin:0 0 10px} p{color:var(--sub);line-height:1.6}
-    .pill{display:inline-block;background:#1f2d5f;border:1px solid #3753a6;padding:6px 12px;border-radius:999px;font-size:13px}
-    .price{font-size:44px;font-weight:800;color:var(--ok);margin:10px 0 4px}
-    ul{margin:8px 0 0 18px;color:#d8e2ff;line-height:1.7}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .cta{display:inline-block;background:var(--cta);color:#fff;text-decoration:none;padding:14px 18px;border-radius:12px;font-weight:700}
-    .muted{font-size:13px;color:#90a2d5}
-    @media (max-width:760px){.grid{grid-template-columns:1fr} h1{font-size:28px}.price{font-size:38px}}
+    :root{
+      --bg:#060a14;--card:#0c1428cc;--line:#22365f;--line2:#385ea6;
+      --text:#ecf3ff;--muted:#9bb0d8;--ok:#68f7b3;--cta:#4f7dff;--cta2:#7f5cff;
+      --accent:#4de2ff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1000px 500px at 80% -10%,#1f3470 0%,transparent 60%),radial-gradient(900px 500px at -10% 0,#182a56 0%,transparent 55%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .gridbg:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(97,130,193,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(97,130,193,.08) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(circle at center, black 30%, transparent 85%)}
+    .container{max-width:1120px;margin:0 auto;padding:26px}
+    .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);padding:8px 12px;border-radius:999px;background:#102146;color:#bcd0ff;font-size:12px;font-weight:600}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch;margin-top:12px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;backdrop-filter: blur(8px);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+    h1{font-size:44px;line-height:1.06;margin:12px 0 14px;letter-spacing:-.02em}
+    .subtitle{font-size:18px;color:#c4d6ff;line-height:1.6;max-width:58ch}
+    .pricebox{display:flex;align-items:end;gap:10px;margin:16px 0}
+    .price{font-size:52px;font-weight:800;color:var(--ok);line-height:1}
+    .strike{color:#9db0db;text-decoration:line-through}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:700}
+    .btn.primary{background:linear-gradient(135deg,var(--cta),var(--cta2));color:#fff}
+    .btn.secondary{border:1px solid #355592;color:#d4e2ff;background:#0f1f42}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .stat{border:1px solid #29457c;background:#0d1b39;border-radius:12px;padding:12px}
+    .stat b{display:block;font-size:22px}
+    .muted{color:var(--muted)}
+    h2{font-size:26px;letter-spacing:-.01em;margin:0 0 8px}
+    .section{margin-top:16px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    ul{margin:8px 0 0 18px;padding:0;line-height:1.7}
+    .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .kpi .box{border:1px solid #274780;background:#0b1834;border-radius:12px;padding:12px;text-align:center}
+    .timeline{display:grid;gap:10px}
+    .step{border-left:3px solid var(--accent);padding-left:12px}
+    .faq details{border:1px solid #2a4377;border-radius:12px;padding:12px;background:#0c1732}
+    .faq details+details{margin-top:8px}
+    .sticky{position:sticky;bottom:12px;z-index:9}
+    .footer{margin:24px 0 10px;text-align:center;color:#94a8d3;font-size:13px}
+    @media (max-width:920px){.hero,.two,.kpi{grid-template-columns:1fr}h1{font-size:34px}.price{font-size:42px}}
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="gridbg"></div>
+  <main class="container">
+    <span class="chip">⚡ Oferta de hoje • Entrega em 24h • 2 vagas</span>
+
     <section class="hero">
-      <span class="pill">Condição exclusiva de hoje</span>
-      <h1>Diagnóstico Express IA + Operação Comercial</h1>
-      <p>Em até <strong>24 horas</strong>, você recebe um plano prático para cortar desperdício, reduzir retrabalho e melhorar conversão com IA aplicada ao seu processo real.</p>
-      <div class="price">R$ 500</div>
-      <p><strong>2 vagas hoje.</strong> Atendimento objetivo, sem enrolação.</p>
-      <p>
-        <a class="cta" target="_blank" href="https://wa.me/5511947374584?text=Quero%20reservar%20a%20vaga%20do%20Diagn%C3%B3stico%20Express%20de%20R%24500">Quero reservar minha vaga no WhatsApp</a>
-      </p>
-      <div class="muted">Clique no botão e envie a mensagem pronta para reservar.</div>
+      <article class="card">
+        <h1>Diagnóstico Express IA<br/>Sprint de Performance Comercial</h1>
+        <p class="subtitle">Você recebe um <b>raio-x técnico-operacional</b> + <b>plano de execução de 7 dias</b> para eliminar gargalos e acelerar resultado com IA aplicada ao seu processo real.</p>
+
+        <div class="pricebox">
+          <div class="price">R$ 500</div>
+          <div class="muted">hoje • <span class="strike">R$ 997</span></div>
+        </div>
+
+        <div class="btns">
+          <a class="btn primary" target="_blank" href="https://wa.me/5511947374584?text=Quero%20fechar%20o%20Diagn%C3%B3stico%20Express%20de%20R%24500%20hoje">Reservar no WhatsApp</a>
+          <a class="btn secondary" href="#escopo">Ver escopo técnico</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>24h</b><span class="muted">prazo de entrega</span></div>
+          <div class="stat"><b>45min</b><span class="muted">sessão estratégica</span></div>
+          <div class="stat"><b>7 dias</b><span class="muted">plano de execução</span></div>
+        </div>
+      </article>
+
+      <aside class="card">
+        <h2>Entregáveis</h2>
+        <ul>
+          <li>Mapa dos <b>3 gargalos críticos</b> (tempo, custo e conversão)</li>
+          <li>Plano de ação de 7 dias com prioridade por ROI</li>
+          <li>Matriz impacto × esforço para execução sem caos</li>
+          <li>Checklist operacional diário (08:30 / 14:00 / 19:00)</li>
+          <li>Recomendação de stack e automações imediatas</li>
+        </ul>
+        <p class="muted" style="margin-top:12px">Garantia: se não enxergar ganho prático, devolução integral.</p>
+      </aside>
     </section>
 
-    <div class="grid">
-      <section class="card">
-        <h2>O que você recebe</h2>
-        <ul>
-          <li>Raio-X dos 3 maiores gargalos</li>
-          <li>Plano de ação de 7 dias (passo a passo)</li>
-          <li>Matriz de priorização (impacto x esforço)</li>
-          <li>Checklist diário de execução</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>Formato</h2>
-        <ul>
-          <li>Call de 45 minutos</li>
-          <li>Entrega do documento executivo em 24h</li>
-          <li>Garantia: sem ganho prático percebido, devolução</li>
-        </ul>
-      </section>
-    </div>
-
-    <section class="card">
-      <h2>Para quem é</h2>
-      <p>Empresas e profissionais com operação comercial travada por processos manuais, falta de clareza de prioridade e baixo uso prático de IA no dia a dia.</p>
+    <section id="escopo" class="section two">
+      <article class="card">
+        <h2>Como funciona</h2>
+        <div class="timeline">
+          <div class="step"><b>Etapa 1 — Briefing rápido</b><br/><span class="muted">Coleta de contexto + metas + gargalos.</span></div>
+          <div class="step"><b>Etapa 2 — Diagnóstico técnico</b><br/><span class="muted">Leitura de processo, funis e operação atual.</span></div>
+          <div class="step"><b>Etapa 3 — Blueprint 7D</b><br/><span class="muted">Plano pronto para executar no dia seguinte.</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <h2>Indicadores atacados</h2>
+        <div class="kpi">
+          <div class="box"><b>↓ Retrabalho</b><div class="muted">Operação</div></div>
+          <div class="box"><b>↑ Conversão</b><div class="muted">Comercial</div></div>
+          <div class="box"><b>↓ Lead Time</b><div class="muted">Entrega</div></div>
+          <div class="box"><b>↑ Clareza</b><div class="muted">Governança</div></div>
+        </div>
+      </article>
     </section>
-  </div>
+
+    <section class="section card faq">
+      <h2>Perguntas rápidas</h2>
+      <details><summary>Para quem esse diagnóstico é ideal?</summary><p class="muted">Empresas e operações com gargalo entre marketing, vendas e execução.</p></details>
+      <details><summary>Qual é a entrega objetiva?</summary><p class="muted">Documento executivo + plano 7 dias com ordem de ataque, métricas e próximos passos.</p></details>
+      <details><summary>Qual o próximo passo para fechar?</summary><p class="muted">Clique no botão, envie mensagem no WhatsApp e bloqueie sua vaga de hoje.</p></details>
+    </section>
+
+    <section class="sticky">
+      <div class="card" style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <div><b>Pronto para executar hoje?</b> <span class="muted">2 vagas • R$500</span></div>
+        <a class="btn primary" target="_blank" href="https://wa.me/5511947374584?text=Quero%20reservar%20agora%20a%20vaga%20de%20R%24500">Fechar agora</a>
+      </div>
+    </section>
+
+    <div class="footer">Operação Clawdiano • execução orientada a resultado</div>
+  </main>
 </body>
 </html>
